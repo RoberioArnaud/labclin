@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { MapPin, Phone, Calendar, Microscope, Stethoscope, Dna, FlaskConical, Heart, Star, ArrowRight, MessageCircle, Clock, ShieldCheck } from "lucide-react";
-import logo from "@/assets/labclin-logo.jpg";
-import mark from "@/assets/labclin-mark.jpg";
+import logo from "@/assets/labclin-logo.png";
+import mark from "@/assets/labclin-logo.png";
 import heroImg from "@/assets/lab-hero.jpg";
 import doctorImg from "@/assets/doctor.jpg";
 
