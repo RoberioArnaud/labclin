@@ -215,10 +215,23 @@ function Index() {
                 </div>
               </div>
               <div className="flex gap-3 items-start bg-white/5 backdrop-blur p-4 rounded-2xl border border-white/10">
-                <Calendar className="h-5 w-5 text-brand-teal shrink-0 mt-0.5" />
-                <div>
-                  <p className="font-semibold text-white">Atendimento</p>
-                  <p className="text-white/70 text-xs mt-0.5">Seg–Sex • Agende com antecedência</p>
+                <Clock className="h-5 w-5 text-brand-teal shrink-0 mt-0.5" />
+                <div className="flex-1">
+                  <p className="font-semibold text-white">Horário de atendimento</p>
+                  <div className="mt-2 space-y-2 text-xs text-white/80">
+                    <div>
+                      <p className="font-semibold text-brand-teal">Manhã</p>
+                      <p>Segunda a sexta · 6h30 às 11h30</p>
+                    </div>
+                    <div>
+                      <p className="font-semibold text-brand-teal">Tarde</p>
+                      <p>Segunda a quinta · 13h30 às 16h30</p>
+                    </div>
+                    <div>
+                      <p className="font-semibold text-brand-teal">Sábado</p>
+                      <p>Aberto por agendamento</p>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
