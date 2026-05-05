@@ -29,14 +29,18 @@ export const Route = createRootRoute({
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
+      { title: "LabClin - Clinica e Laboratório" },
+      { name: "description", content: "LabClin Mobile Connect is a mobile-first landing page for a clinical lab." },
       { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { property: "og:title", content: "LabClin - Clinica e Laboratório" },
+      { property: "og:description", content: "LabClin Mobile Connect is a mobile-first landing page for a clinical lab." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
       { name: "twitter:site", content: "@Lovable" },
+      { name: "twitter:title", content: "LabClin - Clinica e Laboratório" },
+      { name: "twitter:description", content: "LabClin Mobile Connect is a mobile-first landing page for a clinical lab." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/54dd4f74-4d74-47bc-a0a2-133d1e5d5303/id-preview-a7b2f031--c3cd60c2-d46f-4f41-b290-05eb89152294.lovable.app-1778020879192.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/54dd4f74-4d74-47bc-a0a2-133d1e5d5303/id-preview-a7b2f031--c3cd60c2-d46f-4f41-b290-05eb89152294.lovable.app-1778020879192.png" },
     ],
     links: [
       {
