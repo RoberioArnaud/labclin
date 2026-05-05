@@ -2,7 +2,7 @@
 @source "../src";
 @import "tw-animate-css";
 
-@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&family=DM+Serif+Display&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&family=Quicksand:wght@500;600;700&display=swap");
 
 @custom-variant dark (&:is(.dark *));
 
@@ -72,7 +72,7 @@
 :root {
   --radius: 1rem;
   --font-sans: "Nunito", system-ui, sans-serif;
-  --font-display: "DM Serif Display", Georgia, serif;
+  --font-display: "Quicksand", "Nunito", system-ui, sans-serif;
 
   --background: oklch(0.99 0.005 220);
   --foreground: oklch(0.18 0.05 250);
