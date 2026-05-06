@@ -56,26 +56,26 @@ function Index() {
               <span className="bubble inline-block h-1.5 w-1.5 rounded-full bg-brand-teal" />
               Laboratório médico de confiança
             </span>
-            <h1 className="mt-5 text-[2.6rem] leading-[1.05] font-bold text-brand-navy">
+            <h1 className="mt-5 text-[2.6rem] leading-[1.05] font-bold text-brand-navy animate-fade-up">
               Sua saúde com <em className="not-italic text-brand-teal font-display italic">precisão</em> e cuidado.
             </h1>
-            <p className="mt-4 text-base text-muted-foreground leading-relaxed">
+            <p className="mt-4 text-base text-muted-foreground leading-relaxed animate-fade-up" style={{ animationDelay: "120ms" }}>
               Exames clínicos, consultas médicas e especialistas em Cacimba de Dentro e Araruna. Resultados rápidos, atendimento humano.
             </p>
 
-            <div className="mt-7 flex flex-col gap-3">
+            <div className="mt-7 flex flex-col gap-3 animate-fade-up" style={{ animationDelay: "220ms" }}>
               <a href={WHATSAPP_URL} target="_blank" rel="noopener"
-                 className="group flex items-center justify-center gap-2.5 bg-whatsapp text-white font-semibold py-4 rounded-2xl shadow-[var(--shadow-glow)] active:scale-[0.98] transition">
+                 className="group flex items-center justify-center gap-2.5 bg-whatsapp text-white font-semibold py-4 rounded-2xl shadow-soft-lg hover:shadow-[var(--shadow-glow)] hover:-translate-y-0.5 active:scale-[0.98] transition-all duration-300">
                 <MessageCircle className="h-5 w-5" />
                 Fale conosco no WhatsApp
                 <ArrowRight className="h-4 w-4 opacity-70 group-hover:translate-x-1 transition" />
               </a>
-              <a href="#servicos" className="text-center text-sm font-medium text-brand-navy/70 py-2">
+              <a href="#servicos" className="text-center text-sm font-medium text-brand-navy/70 py-2 hover:text-brand-teal transition-colors">
                 Ver nossos serviços ↓
               </a>
             </div>
 
-            <div className="mt-8 relative rounded-3xl overflow-hidden shadow-[var(--shadow-card)]">
+            <div className="mt-8 relative rounded-3xl overflow-hidden shadow-soft-lg animate-fade-in-soft" style={{ animationDelay: "320ms" }}>
               <img src={heroImg} alt="Laboratório LabClin" width={768} height={1024} className="w-full h-72 object-cover" />
               <div className="absolute inset-0 bg-gradient-to-t from-brand-navy/80 via-transparent" />
               <div className="absolute bottom-4 left-4 right-4 text-white">
@@ -87,13 +87,13 @@ function Index() {
             </div>
 
             {/* stats */}
-            <div className="mt-6 grid grid-cols-3 gap-2">
+            <div className="mt-6 grid grid-cols-3 gap-2 reveal">
               {[
                 { n: "2022", l: "Fundada em" },
                 { n: "2", l: "Unidades de atendimento" },
                 { n: "100%", l: "Cuidado humano" },
-              ].map((s) => (
-                <div key={s.l} className="text-center bg-accent rounded-2xl py-3 px-2">
+              ].map((s, i) => (
+                <div key={s.l} style={{ transitionDelay: `${i * 80}ms` }} className="text-center bg-accent rounded-2xl py-3 px-2 shadow-soft hover:-translate-y-0.5 transition-transform">
                   <div className="font-display text-xl font-bold text-brand-navy">{s.n}</div>
                   <div className="text-[10px] text-muted-foreground leading-tight mt-0.5">{s.l}</div>
                 </div>
