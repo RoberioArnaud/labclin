@@ -199,8 +199,8 @@
 .reveal { opacity: 0; transform: translateY(36px) scale(0.98); transition: opacity 0.9s cubic-bezier(0.22, 1, 0.36, 1), transform 0.9s cubic-bezier(0.22, 1, 0.36, 1); }
 .reveal.is-visible { opacity: 1; transform: translateY(0) scale(1); }
 
-.shadow-soft { box-shadow: 0 4px 20px -8px color-mix(in oklab, oklch(0.22 0.06 255) 18%, transparent); }
-.shadow-soft-lg { box-shadow: 0 12px 40px -16px color-mix(in oklab, oklch(0.22 0.06 255) 22%, transparent); }
+.shadow-soft { box-shadow: 0 10px 30px -10px color-mix(in oklab, oklch(0.22 0.06 255) 30%, transparent), 0 2px 6px -2px color-mix(in oklab, oklch(0.22 0.06 255) 18%, transparent); }
+.shadow-soft-lg { box-shadow: 0 28px 60px -18px color-mix(in oklab, oklch(0.22 0.06 255) 40%, transparent), 0 8px 20px -8px color-mix(in oklab, oklch(0.22 0.06 255) 24%, transparent); }
 
-.card-hover { transition: transform 0.3s ease, box-shadow 0.3s ease; }
-.card-hover:hover { transform: translateY(-3px); box-shadow: 0 16px 40px -18px color-mix(in oklab, oklch(0.55 0.09 195) 35%, transparent); }
+.card-hover { transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.4s cubic-bezier(0.22, 1, 0.36, 1); }
+.card-hover:hover { transform: translateY(-6px) scale(1.015); box-shadow: 0 30px 60px -20px color-mix(in oklab, oklch(0.55 0.09 195) 45%, transparent), 0 10px 24px -8px color-mix(in oklab, oklch(0.22 0.06 255) 30%, transparent); }
