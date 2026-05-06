@@ -172,7 +172,7 @@ function Index() {
             </p>
 
             <a href={WHATSAPP_URL} target="_blank" rel="noopener"
-               className="mt-6 flex items-center justify-center gap-2.5 bg-whatsapp text-white font-semibold py-4 rounded-2xl shadow-[var(--shadow-glow)] active:scale-[0.98] transition">
+               className="mt-6 flex items-center justify-center gap-2.5 bg-whatsapp text-white font-semibold py-4 rounded-2xl shadow-soft-lg hover:shadow-[var(--shadow-glow)] hover:-translate-y-0.5 active:scale-[0.98] transition-all duration-300">
               <MessageCircle className="h-5 w-5" />
               Fale conosco no WhatsApp
             </a>
