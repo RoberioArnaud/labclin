@@ -113,7 +113,7 @@ function Index() {
               { icon: FlaskConical, t: "Exames clínicos", d: "Coleta laboratorial com tecnologia de ponta." },
               { icon: Dna, t: "DNA & Sexagem", d: "Testes genéticos com privacidade e precisão." },
               { icon: Microscope, t: "Biópsias & Citológico", d: "Análises detalhadas para diagnósticos seguros." },
-            ].map((s) => (
+            ].map((s, i) => (
               <div key={s.t} style={{ transitionDelay: `${i * 100}ms` }} className="reveal card-hover flex gap-4 bg-card border border-border/50 p-4 rounded-2xl shadow-soft">
                 <div className="shrink-0 h-12 w-12 rounded-xl bg-brand-teal-soft flex items-center justify-center">
                   <s.icon className="h-6 w-6 text-brand-teal" />
