@@ -127,9 +127,12 @@ function Index() {
           </div>
         </section>
 
-        {/* História */}
+        {/* História + CTA + Localização — bloco único navy */}
         <section className="px-5 py-14 bg-brand-navy text-white relative overflow-hidden">
-          <div className="absolute -bottom-20 -right-20 w-72 h-72 rounded-full bg-brand-teal/30 blur-3xl" />
+          <div className="absolute -top-32 -left-24 w-80 h-80 rounded-full bg-brand-teal/20 blur-3xl" />
+          <div className="absolute top-1/2 -right-24 w-72 h-72 rounded-full bg-brand-teal/25 blur-3xl" />
+          <div className="absolute -bottom-24 left-1/3 w-72 h-72 rounded-full bg-brand-teal/15 blur-3xl" />
+
           <div className="relative">
             <p className="text-xs font-semibold text-brand-teal uppercase tracking-wider">Nossa história</p>
             <h2 className="mt-2 text-3xl font-bold">Cuidando do interior da Paraíba desde 2022.</h2>
@@ -158,13 +161,14 @@ function Index() {
                 </div>
               ))}
             </div>
-          </div>
-        </section>
 
-        {/* CTA Final + Localização */}
-        <section className="px-5 pt-4 pb-14 bg-brand-navy text-white relative overflow-hidden">
-          <div className="absolute -top-20 -left-20 w-72 h-72 rounded-full bg-brand-teal/20 blur-3xl" />
-          <div className="relative">
+            {/* Divisória sutil */}
+            <div className="mt-14 mb-10 flex items-center gap-4">
+              <div className="h-px flex-1 bg-gradient-to-r from-transparent via-white/20 to-transparent" />
+              <span className="h-1.5 w-1.5 rounded-full bg-brand-teal" />
+              <div className="h-px flex-1 bg-gradient-to-r from-transparent via-white/20 to-transparent" />
+            </div>
+
             <p className="text-xs font-semibold text-brand-teal uppercase tracking-wider">Vamos cuidar de você</p>
             <h2 className="mt-2 text-3xl font-bold">Agende seu atendimento agora mesmo.</h2>
             <p className="mt-3 text-white/80">
