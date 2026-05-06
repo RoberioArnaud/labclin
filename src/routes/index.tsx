@@ -21,6 +21,20 @@ export const Route = createFileRoute("/")({
 const WHATSAPP_URL = "https://wa.me/5583999999999?text=Ol%C3%A1%21%20Gostaria%20de%20agendar%20um%20atendimento%20na%20LabClin.";
 
 function Index() {
+  useEffect(() => {
+    const els = document.querySelectorAll(".reveal");
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((e) => {
+        if (e.isIntersecting) {
+          e.target.classList.add("is-visible");
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.15 });
+    els.forEach((el) => io.observe(el));
+    return () => io.disconnect();
+  }, []);
+
   return (
     <div className="min-h-screen bg-background overflow-x-hidden">
       {/* Header */}
