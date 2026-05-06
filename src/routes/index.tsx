@@ -4,7 +4,7 @@ import { MapPin, Phone, Microscope, Stethoscope, Dna, FlaskConical, Heart, Arrow
 import logo from "@/assets/labclin-logo.png";
 import mark from "@/assets/labclin-logo.png";
 import heroImg from "@/assets/lab-hero.jpg";
-import doctorImg from "@/assets/doctor.jpg";
+
 
 export const Route = createFileRoute("/")({
   head: () => ({
