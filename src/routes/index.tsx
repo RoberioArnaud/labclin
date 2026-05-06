@@ -1,9 +1,10 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { MapPin, Phone, Calendar, Microscope, Stethoscope, Dna, FlaskConical, Heart, Star, ArrowRight, MessageCircle, Clock, ShieldCheck } from "lucide-react";
+import { useEffect } from "react";
+import { MapPin, Phone, Microscope, Stethoscope, Dna, FlaskConical, Heart, ArrowRight, MessageCircle, Clock, ShieldCheck } from "lucide-react";
 import logo from "@/assets/labclin-logo.png";
 import mark from "@/assets/labclin-logo.png";
 import heroImg from "@/assets/lab-hero.jpg";
-import doctorImg from "@/assets/doctor.jpg";
+
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -20,6 +21,20 @@ export const Route = createFileRoute("/")({
 const WHATSAPP_URL = "https://wa.me/5583999999999?text=Ol%C3%A1%21%20Gostaria%20de%20agendar%20um%20atendimento%20na%20LabClin.";
 
 function Index() {
+  useEffect(() => {
+    const els = document.querySelectorAll(".reveal");
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((e) => {
+        if (e.isIntersecting) {
+          e.target.classList.add("is-visible");
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.15 });
+    els.forEach((el) => io.observe(el));
+    return () => io.disconnect();
+  }, []);
+
   return (
     <div className="min-h-screen bg-background overflow-x-hidden">
       {/* Header */}
@@ -41,26 +56,26 @@ function Index() {
               <span className="bubble inline-block h-1.5 w-1.5 rounded-full bg-brand-teal" />
               Laboratório médico de confiança
             </span>
-            <h1 className="mt-5 text-[2.6rem] leading-[1.05] font-bold text-brand-navy">
+            <h1 className="mt-5 text-[2.6rem] leading-[1.05] font-bold text-brand-navy animate-fade-up">
               Sua saúde com <em className="not-italic text-brand-teal font-display italic">precisão</em> e cuidado.
             </h1>
-            <p className="mt-4 text-base text-muted-foreground leading-relaxed">
+            <p className="mt-4 text-base text-muted-foreground leading-relaxed animate-fade-up" style={{ animationDelay: "120ms" }}>
               Exames clínicos, consultas médicas e especialistas em Cacimba de Dentro e Araruna. Resultados rápidos, atendimento humano.
             </p>
 
-            <div className="mt-7 flex flex-col gap-3">
+            <div className="mt-7 flex flex-col gap-3 animate-fade-up" style={{ animationDelay: "220ms" }}>
               <a href={WHATSAPP_URL} target="_blank" rel="noopener"
-                 className="group flex items-center justify-center gap-2.5 bg-whatsapp text-white font-semibold py-4 rounded-2xl shadow-[var(--shadow-glow)] active:scale-[0.98] transition">
+                 className="group flex items-center justify-center gap-2.5 bg-whatsapp text-white font-semibold py-4 rounded-2xl shadow-soft-lg hover:shadow-[var(--shadow-glow)] hover:-translate-y-0.5 active:scale-[0.98] transition-all duration-300">
                 <MessageCircle className="h-5 w-5" />
                 Fale conosco no WhatsApp
                 <ArrowRight className="h-4 w-4 opacity-70 group-hover:translate-x-1 transition" />
               </a>
-              <a href="#servicos" className="text-center text-sm font-medium text-brand-navy/70 py-2">
+              <a href="#servicos" className="text-center text-sm font-medium text-brand-navy/70 py-2 hover:text-brand-teal transition-colors">
                 Ver nossos serviços ↓
               </a>
             </div>
 
-            <div className="mt-8 relative rounded-3xl overflow-hidden shadow-[var(--shadow-card)]">
+            <div className="mt-8 relative rounded-3xl overflow-hidden shadow-soft-lg animate-fade-in-soft" style={{ animationDelay: "320ms" }}>
               <img src={heroImg} alt="Laboratório LabClin" width={768} height={1024} className="w-full h-72 object-cover" />
               <div className="absolute inset-0 bg-gradient-to-t from-brand-navy/80 via-transparent" />
               <div className="absolute bottom-4 left-4 right-4 text-white">
@@ -72,13 +87,13 @@ function Index() {
             </div>
 
             {/* stats */}
-            <div className="mt-6 grid grid-cols-3 gap-2">
+            <div className="mt-6 grid grid-cols-3 gap-2 reveal">
               {[
                 { n: "2022", l: "Fundada em" },
                 { n: "2", l: "Unidades de atendimento" },
                 { n: "100%", l: "Cuidado humano" },
-              ].map((s) => (
-                <div key={s.l} className="text-center bg-accent rounded-2xl py-3 px-2">
+              ].map((s, i) => (
+                <div key={s.l} style={{ transitionDelay: `${i * 80}ms` }} className="text-center bg-accent rounded-2xl py-3 px-2 shadow-soft hover:-translate-y-0.5 transition-transform">
                   <div className="font-display text-xl font-bold text-brand-navy">{s.n}</div>
                   <div className="text-[10px] text-muted-foreground leading-tight mt-0.5">{s.l}</div>
                 </div>
@@ -98,8 +113,8 @@ function Index() {
               { icon: FlaskConical, t: "Exames clínicos", d: "Coleta laboratorial com tecnologia de ponta." },
               { icon: Dna, t: "DNA & Sexagem", d: "Testes genéticos com privacidade e precisão." },
               { icon: Microscope, t: "Biópsias & Citológico", d: "Análises detalhadas para diagnósticos seguros." },
-            ].map((s) => (
-              <div key={s.t} className="flex gap-4 bg-card border border-border/50 p-4 rounded-2xl shadow-sm">
+            ].map((s, i) => (
+              <div key={s.t} style={{ transitionDelay: `${i * 100}ms` }} className="reveal card-hover flex gap-4 bg-card border border-border/50 p-4 rounded-2xl shadow-soft">
                 <div className="shrink-0 h-12 w-12 rounded-xl bg-brand-teal-soft flex items-center justify-center">
                   <s.icon className="h-6 w-6 text-brand-teal" />
                 </div>
@@ -119,7 +134,7 @@ function Index() {
             <p className="text-xs font-semibold text-brand-teal uppercase tracking-wider">Nossa história</p>
             <h2 className="mt-2 text-3xl font-bold">Cuidando do interior da Paraíba desde 2022.</h2>
             <div className="mt-5 rounded-3xl overflow-hidden">
-              <img src={mark} alt="LabClin" width={400} height={300} loading="lazy" className="w-48 mx-auto rounded-2xl" />
+              <img src={mark} alt="LabClin" width={400} height={300} loading="lazy" className="w-48 mx-auto rounded-2xl animate-float-slow" />
             </div>
             <div className="mt-6 space-y-4 text-white/80 leading-relaxed text-[15px]">
               <p>
@@ -136,50 +151,13 @@ function Index() {
                 { i: ShieldCheck, t: "Resultados confiáveis" },
                 { i: Clock, t: "Entrega ágil" },
                 { i: Microscope, t: "Tecnologia atual" },
-              ].map((v) => (
-                <div key={v.t} className="bg-white/5 border border-white/10 rounded-2xl p-3 backdrop-blur">
+              ].map((v, i) => (
+                <div key={v.t} style={{ transitionDelay: `${i * 80}ms` }} className="reveal bg-white/5 border border-white/10 rounded-2xl p-3 backdrop-blur hover:bg-white/10 hover:-translate-y-0.5 transition">
                   <v.i className="h-5 w-5 text-brand-teal" />
                   <p className="mt-2 text-sm font-medium">{v.t}</p>
                 </div>
               ))}
             </div>
-          </div>
-        </section>
-
-        {/* Resultados / Depoimentos */}
-        <section className="px-5 py-14">
-          <p className="text-xs font-semibold text-brand-teal uppercase tracking-wider">Resultados positivos</p>
-          <h2 className="mt-2 text-3xl font-bold text-brand-navy">Histórias que nos motivam</h2>
-
-          <div className="mt-7 rounded-3xl overflow-hidden relative">
-            <img src={doctorImg} alt="Equipe LabClin" width={768} height={800} loading="lazy" className="w-full h-64 object-cover" />
-            <div className="absolute inset-0 bg-gradient-to-t from-brand-navy/90 to-transparent" />
-            <div className="absolute bottom-5 left-5 right-5 text-white">
-              <div className="flex gap-0.5 mb-2">
-                {Array.from({ length: 5 }).map((_, i) => (
-                  <Star key={i} className="h-4 w-4 fill-brand-teal text-brand-teal" />
-                ))}
-              </div>
-              <p className="font-display text-lg leading-snug">"Resultados rápidos e atendimento que faz a diferença."</p>
-            </div>
-          </div>
-
-          <div className="mt-4 space-y-3">
-            {[
-              { n: "Maria S.", t: "Em pouco tempo recebi meus exames e ainda fui muito bem atendida pela equipe. Recomendo!" },
-              { n: "João P.", t: "Equipamentos modernos e médicos atenciosos. Me senti seguro do começo ao fim." },
-              { n: "Ana C.", t: "O cuidado humano da LabClin transforma uma simples consulta em uma experiência tranquila." },
-            ].map((d) => (
-              <div key={d.n} className="bg-card border border-border/50 rounded-2xl p-4 shadow-sm">
-                <div className="flex gap-0.5 mb-2">
-                  {Array.from({ length: 5 }).map((_, i) => (
-                    <Star key={i} className="h-3.5 w-3.5 fill-brand-teal text-brand-teal" />
-                  ))}
-                </div>
-                <p className="text-sm text-foreground/80 leading-relaxed">"{d.t}"</p>
-                <p className="mt-2 text-xs font-semibold text-brand-navy">— {d.n}</p>
-              </div>
-            ))}
           </div>
         </section>
 
@@ -194,7 +172,7 @@ function Index() {
             </p>
 
             <a href={WHATSAPP_URL} target="_blank" rel="noopener"
-               className="mt-6 flex items-center justify-center gap-2.5 bg-whatsapp text-white font-semibold py-4 rounded-2xl shadow-[var(--shadow-glow)] active:scale-[0.98] transition">
+               className="mt-6 flex items-center justify-center gap-2.5 bg-whatsapp text-white font-semibold py-4 rounded-2xl shadow-soft-lg hover:shadow-[var(--shadow-glow)] hover:-translate-y-0.5 active:scale-[0.98] transition-all duration-300">
               <MessageCircle className="h-5 w-5" />
               Fale conosco no WhatsApp
             </a>
