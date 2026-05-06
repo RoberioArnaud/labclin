@@ -146,43 +146,6 @@ function Index() {
           </div>
         </section>
 
-        {/* Resultados / Depoimentos */}
-        <section className="px-5 py-14">
-          <p className="text-xs font-semibold text-brand-teal uppercase tracking-wider">Resultados positivos</p>
-          <h2 className="mt-2 text-3xl font-bold text-brand-navy">Histórias que nos motivam</h2>
-
-          <div className="mt-7 rounded-3xl overflow-hidden relative">
-            <img src={doctorImg} alt="Equipe LabClin" width={768} height={800} loading="lazy" className="w-full h-64 object-cover" />
-            <div className="absolute inset-0 bg-gradient-to-t from-brand-navy/90 to-transparent" />
-            <div className="absolute bottom-5 left-5 right-5 text-white">
-              <div className="flex gap-0.5 mb-2">
-                {Array.from({ length: 5 }).map((_, i) => (
-                  <Star key={i} className="h-4 w-4 fill-brand-teal text-brand-teal" />
-                ))}
-              </div>
-              <p className="font-display text-lg leading-snug">"Resultados rápidos e atendimento que faz a diferença."</p>
-            </div>
-          </div>
-
-          <div className="mt-4 space-y-3">
-            {[
-              { n: "Maria S.", t: "Em pouco tempo recebi meus exames e ainda fui muito bem atendida pela equipe. Recomendo!" },
-              { n: "João P.", t: "Equipamentos modernos e médicos atenciosos. Me senti seguro do começo ao fim." },
-              { n: "Ana C.", t: "O cuidado humano da LabClin transforma uma simples consulta em uma experiência tranquila." },
-            ].map((d) => (
-              <div key={d.n} className="bg-card border border-border/50 rounded-2xl p-4 shadow-sm">
-                <div className="flex gap-0.5 mb-2">
-                  {Array.from({ length: 5 }).map((_, i) => (
-                    <Star key={i} className="h-3.5 w-3.5 fill-brand-teal text-brand-teal" />
-                  ))}
-                </div>
-                <p className="text-sm text-foreground/80 leading-relaxed">"{d.t}"</p>
-                <p className="mt-2 text-xs font-semibold text-brand-navy">— {d.n}</p>
-              </div>
-            ))}
-          </div>
-        </section>
-
         {/* CTA Final + Localização */}
         <section className="px-5 py-14 bg-brand-navy text-white rounded-t-[2.5rem] relative overflow-hidden">
           <div className="absolute -top-20 -left-20 w-72 h-72 rounded-full bg-brand-teal/20 blur-3xl" />
