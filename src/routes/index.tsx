@@ -162,7 +162,7 @@ function Index() {
         </section>
 
         {/* CTA Final + Localização */}
-        <section className="px-5 py-14 bg-brand-navy text-white rounded-t-[2.5rem] relative overflow-hidden">
+        <section className="px-5 pt-4 pb-14 bg-brand-navy text-white relative overflow-hidden">
           <div className="absolute -top-20 -left-20 w-72 h-72 rounded-full bg-brand-teal/20 blur-3xl" />
           <div className="relative">
             <p className="text-xs font-semibold text-brand-teal uppercase tracking-wider">Vamos cuidar de você</p>
