@@ -151,8 +151,8 @@ function Index() {
                 { i: ShieldCheck, t: "Resultados confiáveis" },
                 { i: Clock, t: "Entrega ágil" },
                 { i: Microscope, t: "Tecnologia atual" },
-              ].map((v) => (
-                <div key={v.t} className="bg-white/5 border border-white/10 rounded-2xl p-3 backdrop-blur">
+              ].map((v, i) => (
+                <div key={v.t} style={{ transitionDelay: `${i * 80}ms` }} className="reveal bg-white/5 border border-white/10 rounded-2xl p-3 backdrop-blur hover:bg-white/10 hover:-translate-y-0.5 transition">
                   <v.i className="h-5 w-5 text-brand-teal" />
                   <p className="mt-2 text-sm font-medium">{v.t}</p>
                 </div>
