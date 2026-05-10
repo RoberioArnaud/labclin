@@ -129,9 +129,9 @@ function Index() {
 
         {/* História + CTA + Localização — bloco único navy */}
         <section className="px-5 py-16 bg-brand-navy text-white relative overflow-hidden rounded-t-[3rem] shadow-[0_-20px_50px_-20px_rgba(0,0,0,0.25)]">
-          <div className="absolute -top-32 -left-24 w-80 h-80 rounded-full bg-brand-teal/20 blur-3xl animate-float-slow" />
-          <div className="absolute top-1/2 -right-24 w-72 h-72 rounded-full bg-brand-teal/25 blur-3xl" />
-          <div className="absolute -bottom-24 left-1/3 w-72 h-72 rounded-full bg-brand-teal/15 blur-3xl" />
+          <div className="absolute -top-32 -left-24 w-80 h-80 rounded-full bg-brand-teal/15 blur-3xl" />
+          <div className="absolute top-1/2 -right-24 w-72 h-72 rounded-full bg-brand-teal/15 blur-3xl" />
+          <div className="absolute -bottom-24 left-1/3 w-72 h-72 rounded-full bg-brand-teal/10 blur-3xl" />
 
           <div className="relative">
             <p className="text-xs font-semibold text-brand-teal uppercase tracking-wider">Nossa história</p>
