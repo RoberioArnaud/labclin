@@ -129,9 +129,9 @@ function Index() {
 
         {/* História + CTA + Localização — bloco único navy */}
         <section className="px-5 py-16 bg-brand-navy text-white relative overflow-hidden rounded-t-[3rem] shadow-[0_-20px_50px_-20px_rgba(0,0,0,0.25)]">
-          <div className="absolute -top-32 -left-24 w-80 h-80 rounded-full bg-brand-teal/20 blur-3xl animate-float-slow" />
-          <div className="absolute top-1/2 -right-24 w-72 h-72 rounded-full bg-brand-teal/25 blur-3xl" />
-          <div className="absolute -bottom-24 left-1/3 w-72 h-72 rounded-full bg-brand-teal/15 blur-3xl" />
+          <div className="absolute -top-32 -left-24 w-80 h-80 rounded-full bg-brand-teal/15 blur-3xl" />
+          <div className="absolute top-1/2 -right-24 w-72 h-72 rounded-full bg-brand-teal/15 blur-3xl" />
+          <div className="absolute -bottom-24 left-1/3 w-72 h-72 rounded-full bg-brand-teal/10 blur-3xl" />
 
           <div className="relative">
             <p className="text-xs font-semibold text-brand-teal uppercase tracking-wider">Nossa história</p>
@@ -192,7 +192,7 @@ function Index() {
               <div className="flex gap-3 items-start bg-white/5 backdrop-blur p-4 rounded-2xl border border-white/10">
                 <MapPin className="h-5 w-5 text-brand-teal shrink-0 mt-0.5" />
                 <div>
-                  <p className="font-semibold text-white">Araruna <span className="text-brand-teal text-xs font-bold ml-1">· Clínica Cuiddare</span></p>
+                  <p className="font-semibold text-white"><span>Araruna</span> <span className="text-brand-teal text-xs font-bold ml-1">· Clínica Cuiddare</span></p>
                   <p className="text-white/70 text-xs mt-0.5">Rua Antônio Targino da Costa, 175 — Araruna/PB</p>
                 </div>
               </div>
