@@ -18,7 +18,7 @@ export const Route = createFileRoute("/")({
   component: Index,
 });
 
-const WHATSAPP_URL = "https://wa.me/5583999999999?text=Ol%C3%A1%21%20Gostaria%20de%20agendar%20um%20atendimento%20na%20LabClin.";
+const WHATSAPP_URL = "https://wa.me/5583982323029?text=Ol%C3%A1%21%20Gostaria%20de%20agendar%20um%20atendimento%20na%20LabClin.";
 
 function Index() {
   useEffect(() => {
@@ -192,8 +192,8 @@ function Index() {
               <div className="flex gap-3 items-start bg-white/5 backdrop-blur p-4 rounded-2xl border border-white/10">
                 <MapPin className="h-5 w-5 text-brand-teal shrink-0 mt-0.5" />
                 <div>
-                  <p className="font-semibold text-white">Araruna</p>
-                  <p className="text-white/70 text-xs mt-0.5">Unidade de atendimento</p>
+                  <p className="font-semibold text-white">Araruna <span className="text-brand-teal text-xs font-bold ml-1">· Clínica Cuiddare</span></p>
+                  <p className="text-white/70 text-xs mt-0.5">Rua Antônio Targino da Costa, 175 — Araruna/PB</p>
                 </div>
               </div>
               <div className="flex gap-3 items-start bg-white/5 backdrop-blur p-4 rounded-2xl border border-white/10">
