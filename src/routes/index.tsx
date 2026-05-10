@@ -38,7 +38,7 @@ function Index() {
   return (
     <div className="min-h-screen bg-background overflow-x-hidden">
       {/* Header */}
-      <header className="sticky top-0 z-40 bg-brand-navy/95 backdrop-blur-lg border-b border-white/10">
+      <header className="sticky top-0 z-40 bg-[#1a2340] border-b border-white/5">
         <div className="max-w-md mx-auto px-5 py-2.5 flex items-center justify-between">
           <img src={logo} alt="LabClin" className="h-10 w-auto" />
           <a href={WHATSAPP_URL} target="_blank" rel="noopener" className="text-xs font-semibold text-white bg-whatsapp/90 px-3 py-1.5 rounded-full flex items-center gap-1.5">
@@ -137,7 +137,7 @@ function Index() {
             <p className="text-xs font-semibold text-brand-teal uppercase tracking-wider">Nossa história</p>
             <h2 className="mt-2 text-3xl font-bold">Cuidando do interior da Paraíba desde 2022.</h2>
             <div className="mt-5 rounded-3xl overflow-hidden">
-              <img src={mark} alt="LabClin" width={400} height={300} loading="lazy" className="w-48 mx-auto rounded-2xl animate-float-slow" />
+              <img src={mark} alt="LabClin" width={400} height={300} loading="lazy" className="w-48 mx-auto rounded-2xl" />
             </div>
             <div className="mt-6 space-y-4 text-white/80 leading-relaxed text-[15px]">
               <p>
