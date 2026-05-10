@@ -18,7 +18,7 @@ export const Route = createFileRoute("/")({
   component: Index,
 });
 
-const WHATSAPP_URL = "https://wa.me/5583999999999?text=Ol%C3%A1%21%20Gostaria%20de%20agendar%20um%20atendimento%20na%20LabClin.";
+const WHATSAPP_URL = "https://wa.me/5583982323029?text=Ol%C3%A1%21%20Gostaria%20de%20agendar%20um%20atendimento%20na%20LabClin.";
 
 function Index() {
   useEffect(() => {
