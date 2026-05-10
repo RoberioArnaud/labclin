@@ -137,7 +137,7 @@ function Index() {
             <p className="text-xs font-semibold text-brand-teal uppercase tracking-wider">Nossa história</p>
             <h2 className="mt-2 text-3xl font-bold">Cuidando do interior da Paraíba desde 2022.</h2>
             <div className="mt-5 rounded-3xl overflow-hidden">
-              <img src={mark} alt="LabClin" width={400} height={300} loading="lazy" className="w-48 mx-auto rounded-2xl animate-float-slow" />
+              <img src={mark} alt="LabClin" width={400} height={300} loading="lazy" className="w-48 mx-auto rounded-2xl" />
             </div>
             <div className="mt-6 space-y-4 text-white/80 leading-relaxed text-[15px]">
               <p>
