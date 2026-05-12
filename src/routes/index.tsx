@@ -137,7 +137,7 @@ function Index() {
         </section>
 
         {/* História + CTA + Localização — bloco único navy */}
-        <section id="historia" className="px-5 lg:px-16 py-16 lg:py-24 bg-brand-navy text-white relative overflow-hidden rounded-t-[3rem] lg:rounded-[3rem] lg:mt-12 shadow-[0_-20px_50px_-20px_rgba(0,0,0,0.25)]">
+        <section id="historia" className="px-5 lg:px-16 py-16 lg:py-24 bg-brand-navy text-white relative overflow-hidden rounded-t-[3rem] lg:rounded-none lg:mt-0 shadow-[0_-20px_50px_-20px_rgba(0,0,0,0.25)]">
           <div className="absolute -top-32 -left-24 w-80 h-80 rounded-full bg-brand-teal/15 blur-3xl" />
           <div className="absolute top-1/2 -right-24 w-72 h-72 rounded-full bg-brand-teal/15 blur-3xl" />
           <div className="absolute -bottom-24 left-1/3 w-72 h-72 rounded-full bg-brand-teal/10 blur-3xl" />
@@ -157,10 +157,8 @@ function Index() {
                   </p>
                 </div>
               </div>
-              <div className="mt-5 lg:mt-0 lg:order-first relative rounded-3xl overflow-hidden lg:p-12 lg:bg-gradient-to-br lg:from-white/10 lg:via-brand-teal/10 lg:to-white/5 lg:border lg:border-white/10 lg:backdrop-blur lg:shadow-soft-lg flex items-center justify-center">
-                <div className="hidden lg:block absolute -top-16 -left-16 w-56 h-56 rounded-full bg-brand-teal/20 blur-3xl" />
-                <div className="hidden lg:block absolute -bottom-20 -right-10 w-64 h-64 rounded-full bg-white/10 blur-3xl" />
-                <img src={mark} alt="LabClin" width={400} height={300} loading="lazy" className="relative w-48 lg:w-72 rounded-2xl" />
+              <div className="mt-5 lg:mt-0 lg:order-first flex items-center justify-center">
+                <img src={mark} alt="LabClin" width={400} height={300} loading="lazy" className="w-48 lg:w-80 rounded-2xl" />
               </div>
             </div>
 
