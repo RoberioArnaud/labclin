@@ -39,88 +39,97 @@ function Index() {
     <div className="min-h-screen bg-background overflow-x-hidden">
       {/* Header */}
       <header className="sticky top-0 z-40 bg-[#1a2340] border-b border-white/5">
-        <div className="max-w-md mx-auto px-5 py-2.5 flex items-center justify-between">
-          <img src={logo} alt="LabClin" className="h-10 w-auto" />
-          <a href={WHATSAPP_URL} target="_blank" rel="noopener" className="text-xs font-semibold text-white bg-whatsapp/90 px-3 py-1.5 rounded-full flex items-center gap-1.5">
-            <Phone className="h-3.5 w-3.5" /> Agendar
+        <div className="max-w-md lg:max-w-7xl mx-auto px-5 lg:px-10 py-2.5 lg:py-3 flex items-center justify-between">
+          <img src={logo} alt="LabClin" className="h-10 lg:h-12 w-auto" />
+          <nav className="hidden lg:flex items-center gap-8 text-sm font-medium text-white/80">
+            <a href="#servicos" className="hover:text-brand-teal transition-colors">Serviços</a>
+            <a href="#historia" className="hover:text-brand-teal transition-colors">Nossa história</a>
+            <a href="#contato" className="hover:text-brand-teal transition-colors">Contato</a>
+          </nav>
+          <a href={WHATSAPP_URL} target="_blank" rel="noopener" className="text-xs lg:text-sm font-semibold text-white bg-whatsapp/90 hover:bg-whatsapp px-3 lg:px-5 py-1.5 lg:py-2.5 rounded-full flex items-center gap-1.5 lg:gap-2 transition-colors">
+            <Phone className="h-3.5 w-3.5 lg:h-4 lg:w-4" /> Agendar
           </a>
         </div>
       </header>
 
-      <main className="max-w-md mx-auto">
+      <main className="max-w-md lg:max-w-7xl mx-auto">
         {/* Hero */}
-        <section className="relative px-5 pt-8 pb-12">
-          <div className="absolute -top-10 -right-10 w-60 h-60 rounded-full bg-brand-teal-soft blur-3xl opacity-60" />
-          <div className="relative">
-            <span className="inline-flex items-center gap-1.5 text-xs font-semibold text-brand-teal bg-brand-teal-soft px-3 py-1.5 rounded-full">
-              <span className="bubble inline-block h-1.5 w-1.5 rounded-full bg-brand-teal" />
-              Laboratório médico de confiança
-            </span>
-            <h1 className="mt-5 text-[2.6rem] leading-[1.05] font-bold text-brand-navy animate-fade-up">
-              Sua saúde com <em className="not-italic text-brand-teal font-display italic">precisão</em> e cuidado.
-            </h1>
-            <p className="mt-4 text-base text-muted-foreground leading-relaxed animate-fade-up" style={{ animationDelay: "120ms" }}>
-              Exames clínicos, consultas médicas e especialistas em Cacimba de Dentro e Araruna. Resultados rápidos, atendimento humano.
-            </p>
+        <section className="relative px-5 lg:px-10 pt-8 lg:pt-20 pb-12 lg:pb-24">
+          <div className="absolute -top-10 -right-10 w-60 lg:w-[32rem] h-60 lg:h-[32rem] rounded-full bg-brand-teal-soft blur-3xl opacity-60" />
+          <div className="relative lg:grid lg:grid-cols-2 lg:gap-16 lg:items-center">
+            <div>
+              <span className="inline-flex items-center gap-1.5 text-xs font-semibold text-brand-teal bg-brand-teal-soft px-3 py-1.5 rounded-full">
+                <span className="bubble inline-block h-1.5 w-1.5 rounded-full bg-brand-teal" />
+                Laboratório médico de confiança
+              </span>
+              <h1 className="mt-5 text-[2.6rem] lg:text-6xl xl:text-7xl leading-[1.05] font-bold text-brand-navy animate-fade-up">
+                Sua saúde com <em className="not-italic text-brand-teal font-display italic">precisão</em> e cuidado.
+              </h1>
+              <p className="mt-4 lg:mt-6 text-base lg:text-lg text-muted-foreground leading-relaxed lg:max-w-lg animate-fade-up" style={{ animationDelay: "120ms" }}>
+                Exames clínicos, consultas médicas e especialistas em Cacimba de Dentro e Araruna. Resultados rápidos, atendimento humano.
+              </p>
 
-            <div className="mt-7 flex flex-col gap-3 animate-fade-up" style={{ animationDelay: "220ms" }}>
-              <a href={WHATSAPP_URL} target="_blank" rel="noopener"
-                 className="group flex items-center justify-center gap-2.5 bg-whatsapp text-white font-semibold py-4 rounded-2xl shadow-soft-lg hover:shadow-[var(--shadow-glow)] hover:-translate-y-0.5 active:scale-[0.98] transition-all duration-300">
-                <MessageCircle className="h-5 w-5" />
-                Fale conosco no WhatsApp
-                <ArrowRight className="h-4 w-4 opacity-70 group-hover:translate-x-1 transition" />
-              </a>
-              <a href="#servicos" className="text-center text-sm font-medium text-brand-navy/70 py-2 hover:text-brand-teal transition-colors">
-                Ver nossos serviços ↓
-              </a>
-            </div>
+              <div className="mt-7 flex flex-col lg:flex-row gap-3 lg:gap-4 animate-fade-up" style={{ animationDelay: "220ms" }}>
+                <a href={WHATSAPP_URL} target="_blank" rel="noopener"
+                   className="group flex items-center justify-center gap-2.5 bg-whatsapp text-white font-semibold py-4 lg:px-8 rounded-2xl shadow-soft-lg hover:shadow-[var(--shadow-glow)] hover:-translate-y-0.5 active:scale-[0.98] transition-all duration-300">
+                  <MessageCircle className="h-5 w-5" />
+                  Fale conosco no WhatsApp
+                  <ArrowRight className="h-4 w-4 opacity-70 group-hover:translate-x-1 transition" />
+                </a>
+                <a href="#servicos" className="text-center lg:self-center text-sm font-medium text-brand-navy/70 py-2 lg:py-4 lg:px-6 lg:border lg:border-brand-navy/15 lg:rounded-2xl hover:text-brand-teal transition-colors">
+                  Ver nossos serviços ↓
+                </a>
+              </div>
 
-            <div className="mt-8 relative rounded-3xl overflow-hidden shadow-soft-lg animate-fade-in-soft" style={{ animationDelay: "320ms" }}>
-              <img src={heroImg} alt="Laboratório LabClin" width={768} height={1024} className="w-full h-72 object-cover" />
-              <div className="absolute inset-0 bg-gradient-to-t from-brand-navy/80 via-transparent" />
-              <div className="absolute bottom-4 left-4 right-4 text-white">
-                <div className="flex items-center gap-2 text-xs">
-                  <ShieldCheck className="h-4 w-4" /> Certificado e seguro
-                </div>
-                <p className="mt-1 font-display text-lg">Tecnologia + cuidado humano</p>
+              {/* stats */}
+              <div className="mt-6 lg:mt-10 grid grid-cols-3 gap-2 lg:gap-4 reveal lg:max-w-lg">
+                {[
+                  { n: "2022", l: "Fundada em" },
+                  { n: "2", l: "Unidades de atendimento" },
+                  { n: "100%", l: "Cuidado humano" },
+                ].map((s, i) => (
+                  <div key={s.l} style={{ transitionDelay: `${i * 80}ms` }} className="text-center bg-accent rounded-2xl py-3 lg:py-5 px-2 shadow-soft hover:-translate-y-0.5 transition-transform">
+                    <div className="font-display text-xl lg:text-3xl font-bold text-brand-navy">{s.n}</div>
+                    <div className="text-[10px] lg:text-xs text-muted-foreground leading-tight mt-0.5 lg:mt-1">{s.l}</div>
+                  </div>
+                ))}
               </div>
             </div>
 
-            {/* stats */}
-            <div className="mt-6 grid grid-cols-3 gap-2 reveal">
-              {[
-                { n: "2022", l: "Fundada em" },
-                { n: "2", l: "Unidades de atendimento" },
-                { n: "100%", l: "Cuidado humano" },
-              ].map((s, i) => (
-                <div key={s.l} style={{ transitionDelay: `${i * 80}ms` }} className="text-center bg-accent rounded-2xl py-3 px-2 shadow-soft hover:-translate-y-0.5 transition-transform">
-                  <div className="font-display text-xl font-bold text-brand-navy">{s.n}</div>
-                  <div className="text-[10px] text-muted-foreground leading-tight mt-0.5">{s.l}</div>
+            <div className="mt-8 lg:mt-0 relative rounded-3xl overflow-hidden shadow-soft-lg animate-fade-in-soft" style={{ animationDelay: "320ms" }}>
+              <img src={heroImg} alt="Laboratório LabClin" width={768} height={1024} className="w-full h-72 lg:h-[34rem] object-cover" />
+              <div className="absolute inset-0 bg-gradient-to-t from-brand-navy/80 via-transparent" />
+              <div className="absolute bottom-4 lg:bottom-8 left-4 lg:left-8 right-4 lg:right-8 text-white">
+                <div className="flex items-center gap-2 text-xs lg:text-sm">
+                  <ShieldCheck className="h-4 w-4 lg:h-5 lg:w-5" /> Certificado e seguro
                 </div>
-              ))}
+                <p className="mt-1 font-display text-lg lg:text-2xl">Tecnologia + cuidado humano</p>
+              </div>
             </div>
           </div>
         </section>
 
         {/* Serviços */}
-        <section id="servicos" className="px-5 py-12 bg-[var(--gradient-soft)]">
-          <p className="text-xs font-semibold text-brand-teal uppercase tracking-wider">O que oferecemos</p>
-          <h2 className="mt-2 text-3xl font-bold text-brand-navy">Serviços completos para sua saúde</h2>
+        <section id="servicos" className="px-5 lg:px-10 py-12 lg:py-24 bg-[var(--gradient-soft)] lg:rounded-[3rem]">
+          <div className="lg:text-center lg:max-w-2xl lg:mx-auto">
+            <p className="text-xs font-semibold text-brand-teal uppercase tracking-wider">O que oferecemos</p>
+            <h2 className="mt-2 text-3xl lg:text-5xl font-bold text-brand-navy">Serviços completos para sua saúde</h2>
+          </div>
 
-          <div className="mt-7 space-y-3">
+          <div className="mt-7 lg:mt-14 space-y-3 lg:space-y-0 lg:grid lg:grid-cols-2 xl:grid-cols-4 lg:gap-6">
             {[
               { icon: Stethoscope, t: "Consultas médicas", d: "Atendimento com clínicos gerais e especialistas." },
               { icon: FlaskConical, t: "Exames clínicos", d: "Coleta laboratorial com tecnologia de ponta." },
               { icon: Dna, t: "DNA & Sexagem", d: "Testes genéticos com privacidade e precisão." },
               { icon: Microscope, t: "Biópsias & Citológico", d: "Análises detalhadas para diagnósticos seguros." },
             ].map((s, i) => (
-              <div key={s.t} style={{ transitionDelay: `${i * 100}ms` }} className="reveal card-hover flex gap-4 bg-card border border-border/50 p-4 rounded-2xl shadow-soft">
-                <div className="shrink-0 h-12 w-12 rounded-xl bg-brand-teal-soft flex items-center justify-center">
-                  <s.icon className="h-6 w-6 text-brand-teal" />
+              <div key={s.t} style={{ transitionDelay: `${i * 100}ms` }} className="reveal card-hover flex lg:flex-col gap-4 lg:gap-5 bg-card border border-border/50 p-4 lg:p-7 rounded-2xl shadow-soft">
+                <div className="shrink-0 h-12 w-12 lg:h-14 lg:w-14 rounded-xl bg-brand-teal-soft flex items-center justify-center">
+                  <s.icon className="h-6 w-6 lg:h-7 lg:w-7 text-brand-teal" />
                 </div>
                 <div>
-                  <h3 className="font-semibold text-brand-navy">{s.t}</h3>
-                  <p className="text-sm text-muted-foreground mt-0.5">{s.d}</p>
+                  <h3 className="font-semibold lg:text-lg text-brand-navy">{s.t}</h3>
+                  <p className="text-sm text-muted-foreground mt-0.5 lg:mt-2">{s.d}</p>
                 </div>
               </div>
             ))}
@@ -128,36 +137,41 @@ function Index() {
         </section>
 
         {/* História + CTA + Localização — bloco único navy */}
-        <section className="px-5 py-16 bg-brand-navy text-white relative overflow-hidden rounded-t-[3rem] shadow-[0_-20px_50px_-20px_rgba(0,0,0,0.25)]">
+        <section id="historia" className="px-5 lg:px-16 py-16 lg:py-24 bg-brand-navy text-white relative overflow-hidden rounded-t-[3rem] lg:rounded-[3rem] lg:mt-12 shadow-[0_-20px_50px_-20px_rgba(0,0,0,0.25)]">
           <div className="absolute -top-32 -left-24 w-80 h-80 rounded-full bg-brand-teal/15 blur-3xl" />
           <div className="absolute top-1/2 -right-24 w-72 h-72 rounded-full bg-brand-teal/15 blur-3xl" />
           <div className="absolute -bottom-24 left-1/3 w-72 h-72 rounded-full bg-brand-teal/10 blur-3xl" />
 
           <div className="relative">
-            <p className="text-xs font-semibold text-brand-teal uppercase tracking-wider">Nossa história</p>
-            <h2 className="mt-2 text-3xl font-bold">Cuidando do interior da Paraíba desde 2022.</h2>
-            <div className="mt-5 rounded-3xl overflow-hidden">
-              <img src={mark} alt="LabClin" width={400} height={300} loading="lazy" className="w-48 mx-auto rounded-2xl" />
-            </div>
-            <div className="mt-6 space-y-4 text-white/80 leading-relaxed text-[15px]">
-              <p>
-                Fundada em <strong className="text-white">2022</strong>, a <strong className="text-white">LabClin</strong> nasceu com uma missão simples: levar diagnósticos confiáveis e atendimento humano às cidades de <strong className="text-white">Cacimba de Dentro</strong> e <strong className="text-white">Araruna</strong>.
-              </p>
-              <p>
-                Em poucos anos, conquistamos a confiança da nossa comunidade combinando equipamentos modernos, equipe qualificada e uma escuta atenta — porque saúde é mais do que números, é cuidado real com cada pessoa que passa por aqui.
-              </p>
+            {/* História - desktop two columns */}
+            <div className="lg:grid lg:grid-cols-2 lg:gap-16 lg:items-center">
+              <div>
+                <p className="text-xs font-semibold text-brand-teal uppercase tracking-wider">Nossa história</p>
+                <h2 className="mt-2 text-3xl lg:text-5xl font-bold">Cuidando do interior da Paraíba desde 2022.</h2>
+                <div className="mt-6 space-y-4 text-white/80 leading-relaxed text-[15px] lg:text-base">
+                  <p>
+                    Fundada em <strong className="text-white">2022</strong>, a <strong className="text-white">LabClin</strong> nasceu com uma missão simples: levar diagnósticos confiáveis e atendimento humano às cidades de <strong className="text-white">Cacimba de Dentro</strong> e <strong className="text-white">Araruna</strong>.
+                  </p>
+                  <p>
+                    Em poucos anos, conquistamos a confiança da nossa comunidade combinando equipamentos modernos, equipe qualificada e uma escuta atenta — porque saúde é mais do que números, é cuidado real com cada pessoa que passa por aqui.
+                  </p>
+                </div>
+              </div>
+              <div className="mt-5 lg:mt-0 rounded-3xl overflow-hidden lg:order-first">
+                <img src={mark} alt="LabClin" width={400} height={300} loading="lazy" className="w-48 lg:w-80 mx-auto rounded-2xl" />
+              </div>
             </div>
 
-            <div className="mt-8 grid grid-cols-2 gap-3">
+            <div className="mt-8 lg:mt-16 grid grid-cols-2 lg:grid-cols-4 gap-3 lg:gap-5">
               {[
                 { i: Heart, t: "Atendimento humano" },
                 { i: ShieldCheck, t: "Resultados confiáveis" },
                 { i: Clock, t: "Entrega ágil" },
                 { i: Microscope, t: "Tecnologia atual" },
               ].map((v, i) => (
-                <div key={v.t} style={{ transitionDelay: `${i * 80}ms` }} className="reveal bg-white/5 border border-white/10 rounded-2xl p-3 backdrop-blur hover:bg-white/10 hover:-translate-y-0.5 transition">
-                  <v.i className="h-5 w-5 text-brand-teal" />
-                  <p className="mt-2 text-sm font-medium">{v.t}</p>
+                <div key={v.t} style={{ transitionDelay: `${i * 80}ms` }} className="reveal bg-white/5 border border-white/10 rounded-2xl p-3 lg:p-5 backdrop-blur hover:bg-white/10 hover:-translate-y-0.5 transition">
+                  <v.i className="h-5 w-5 lg:h-6 lg:w-6 text-brand-teal" />
+                  <p className="mt-2 lg:mt-3 text-sm lg:text-base font-medium">{v.t}</p>
                 </div>
               ))}
             </div>
@@ -169,49 +183,54 @@ function Index() {
               <div className="h-px flex-1 bg-gradient-to-r from-transparent via-white/20 to-transparent" />
             </div>
 
-            <p className="text-xs font-semibold text-brand-teal uppercase tracking-wider">Vamos cuidar de você</p>
-            <h2 className="mt-2 text-3xl font-bold">Agende seu atendimento agora mesmo.</h2>
-            <p className="mt-3 text-white/80">
-              Resposta rápida pelo WhatsApp. Estamos prontos para te receber.
-            </p>
+            {/* CTA + Contato - desktop two columns */}
+            <div id="contato" className="lg:grid lg:grid-cols-2 lg:gap-16 lg:items-start">
+              <div>
+                <p className="text-xs font-semibold text-brand-teal uppercase tracking-wider">Vamos cuidar de você</p>
+                <h2 className="mt-2 text-3xl lg:text-5xl font-bold">Agende seu atendimento agora mesmo.</h2>
+                <p className="mt-3 lg:mt-5 text-white/80 lg:text-lg">
+                  Resposta rápida pelo WhatsApp. Estamos prontos para te receber.
+                </p>
 
-            <a href={WHATSAPP_URL} target="_blank" rel="noopener"
-               className="mt-6 flex items-center justify-center gap-2.5 bg-whatsapp text-white font-semibold py-4 rounded-2xl shadow-soft-lg hover:shadow-[var(--shadow-glow)] hover:-translate-y-0.5 active:scale-[0.98] transition-all duration-300">
-              <MessageCircle className="h-5 w-5" />
-              Fale conosco no WhatsApp
-            </a>
+                <a href={WHATSAPP_URL} target="_blank" rel="noopener"
+                   className="mt-6 lg:mt-8 flex lg:inline-flex items-center justify-center gap-2.5 bg-whatsapp text-white font-semibold py-4 lg:px-10 rounded-2xl shadow-soft-lg hover:shadow-[var(--shadow-glow)] hover:-translate-y-0.5 active:scale-[0.98] transition-all duration-300">
+                  <MessageCircle className="h-5 w-5" />
+                  Fale conosco no WhatsApp
+                </a>
+              </div>
 
-            <div className="mt-8 space-y-3 text-sm">
-              <div className="flex gap-3 items-start bg-white/5 backdrop-blur p-4 rounded-2xl border border-white/10">
-                <MapPin className="h-5 w-5 text-brand-teal shrink-0 mt-0.5" />
-                <div>
-                  <p className="font-semibold text-white">Cacimba de Dentro</p>
-                  <p className="text-white/70 text-xs mt-0.5">Rua Presidente João Pessoa</p>
+              <div className="mt-8 lg:mt-0 space-y-3 text-sm">
+                <div className="flex gap-3 items-start bg-white/5 backdrop-blur p-4 lg:p-5 rounded-2xl border border-white/10">
+                  <MapPin className="h-5 w-5 text-brand-teal shrink-0 mt-0.5" />
+                  <div>
+                    <p className="font-semibold text-white lg:text-base">Cacimba de Dentro</p>
+                    <p className="text-white/70 text-xs lg:text-sm mt-0.5">Rua Presidente João Pessoa</p>
+                  </div>
                 </div>
-              </div>
-              <div className="flex gap-3 items-start bg-white/5 backdrop-blur p-4 rounded-2xl border border-white/10">
-                <MapPin className="h-5 w-5 text-brand-teal shrink-0 mt-0.5" />
-                <div>
-                  <p className="font-semibold text-white"><span>Araruna</span> <span className="text-brand-teal text-xs font-bold ml-1">· Clínica Cuiddare</span></p>
-                  <p className="text-white/70 text-xs mt-0.5">Rua Antônio Targino da Costa, 175 — Araruna/PB</p>
+                <div className="flex gap-3 items-start bg-white/5 backdrop-blur p-4 lg:p-5 rounded-2xl border border-white/10">
+                  <MapPin className="h-5 w-5 text-brand-teal shrink-0 mt-0.5" />
+                  <div>
+                    <p className="font-semibold text-white lg:text-base"><span>Araruna</span> <span className="text-brand-teal text-xs font-bold ml-1">· Clínica Cuiddare</span></p>
+                    <p className="text-white/70 text-xs lg:text-sm mt-0.5">Rua Antônio Targino da Costa, 175 — Araruna/PB</p>
+                  </div>
                 </div>
-              </div>
-              <div className="flex gap-3 items-start bg-white/5 backdrop-blur p-4 rounded-2xl border border-white/10">
-                <Clock className="h-5 w-5 text-brand-teal shrink-0 mt-0.5" />
-                <div className="flex-1">
-                  <p className="font-semibold text-white">Horário de atendimento</p>
-                  <div className="mt-2 space-y-2 text-xs text-white/80">
-                    <div>
-                      <p className="font-semibold text-brand-teal">Manhã</p>
-                      <p>Segunda a sexta · 6h30 às 11h30</p>
-                    </div>
-                    <div>
-                      <p className="font-semibold text-brand-teal">Tarde</p>
-                      <p>Segunda a quinta · 13h30 às 16h30</p>
-                    </div>
-                    <div>
-                      <p className="font-semibold text-brand-teal">Sábado</p>
-                      <p>Aberto por agendamento</p>
+                <div className="flex gap-3 items-start bg-white/5 backdrop-blur p-4 lg:p-5 rounded-2xl border border-white/10">
+                  <Clock className="h-5 w-5 text-brand-teal shrink-0 mt-0.5" />
+                  <div className="flex-1">
+                    <p className="font-semibold text-white lg:text-base">Horário de atendimento</p>
+                    <div className="mt-2 space-y-2 text-xs lg:text-sm text-white/80">
+                      <div>
+                        <p className="font-semibold text-brand-teal">Manhã</p>
+                        <p>Segunda a sexta · 6h30 às 11h30</p>
+                      </div>
+                      <div>
+                        <p className="font-semibold text-brand-teal">Tarde</p>
+                        <p>Segunda a quinta · 13h30 às 16h30</p>
+                      </div>
+                      <div>
+                        <p className="font-semibold text-brand-teal">Sábado</p>
+                        <p>Aberto por agendamento</p>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -220,8 +239,8 @@ function Index() {
           </div>
         </section>
 
-        <footer className="bg-brand-navy text-white/60 px-5 py-8 text-center text-xs border-t border-white/10">
-          <img src={logo} alt="LabClin" className="h-10 mx-auto" />
+        <footer className="bg-brand-navy text-white/60 px-5 lg:px-10 py-8 lg:py-12 text-center text-xs lg:text-sm border-t border-white/10">
+          <img src={logo} alt="LabClin" className="h-10 lg:h-12 mx-auto" />
           <p className="mt-4">© {new Date().getFullYear()} LabClin — Laboratório e Clínica Integrada.</p>
           <p className="mt-1">Todos os direitos reservados.</p>
         </footer>
