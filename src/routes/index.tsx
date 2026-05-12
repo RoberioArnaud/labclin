@@ -157,8 +157,10 @@ function Index() {
                   </p>
                 </div>
               </div>
-              <div className="mt-5 lg:mt-0 rounded-3xl overflow-hidden lg:order-first">
-                <img src={mark} alt="LabClin" width={400} height={300} loading="lazy" className="w-48 lg:w-80 mx-auto rounded-2xl" />
+              <div className="mt-5 lg:mt-0 lg:order-first relative rounded-3xl overflow-hidden lg:p-12 lg:bg-gradient-to-br lg:from-white/10 lg:via-brand-teal/10 lg:to-white/5 lg:border lg:border-white/10 lg:backdrop-blur lg:shadow-soft-lg flex items-center justify-center">
+                <div className="hidden lg:block absolute -top-16 -left-16 w-56 h-56 rounded-full bg-brand-teal/20 blur-3xl" />
+                <div className="hidden lg:block absolute -bottom-20 -right-10 w-64 h-64 rounded-full bg-white/10 blur-3xl" />
+                <img src={mark} alt="LabClin" width={400} height={300} loading="lazy" className="relative w-48 lg:w-72 rounded-2xl" />
               </div>
             </div>
 
