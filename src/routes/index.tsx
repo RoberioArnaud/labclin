@@ -239,7 +239,7 @@ function Index() {
           </div>
         </section>
 
-        <footer className="bg-brand-navy text-white/60 px-5 lg:px-10 py-8 lg:py-12 text-center text-xs lg:text-sm border-t border-white/10">
+        <footer className="bg-brand-navy text-white/60 px-5 lg:px-10 py-8 lg:py-12 text-center text-xs lg:text-sm border-t border-white/10 lg:w-screen lg:left-1/2 lg:-translate-x-1/2 relative">
           <img src={logo} alt="LabClin" className="h-10 lg:h-12 mx-auto" />
           <p className="mt-4">© {new Date().getFullYear()} LabClin — Laboratório e Clínica Integrada.</p>
           <p className="mt-1">Todos os direitos reservados.</p>
