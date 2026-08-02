@@ -215,6 +215,13 @@ function Index() {
                   </div>
                 </div>
                 <div className="flex gap-3 items-start bg-white/5 backdrop-blur p-4 lg:p-5 rounded-2xl border border-white/10">
+                  <MapPin className="h-5 w-5 text-brand-teal shrink-0 mt-0.5" />
+                  <div>
+                    <p className="font-semibold text-white lg:text-base"><span>Cacimba de Dentro</span> <span className="text-brand-teal text-xs font-bold ml-1">· Clínica Baduclin</span></p>
+                    <p className="text-white/70 text-xs lg:text-sm mt-0.5">Distrito de Logradouro - Cacimba de Dentro/PB</p>
+                  </div>
+                </div>
+                <div className="flex gap-3 items-start bg-white/5 backdrop-blur p-4 lg:p-5 rounded-2xl border border-white/10">
                   <Clock className="h-5 w-5 text-brand-teal shrink-0 mt-0.5" />
                   <div className="flex-1">
                     <p className="font-semibold text-white lg:text-base">Horário de atendimento</p>
