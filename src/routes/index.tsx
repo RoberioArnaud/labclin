@@ -1,9 +1,10 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect } from "react";
-import { MapPin, Phone, Microscope, Stethoscope, Dna, FlaskConical, Heart, ArrowRight, MessageCircle, Clock, ShieldCheck } from "lucide-react";
+import { MapPin, Phone, Microscope, Stethoscope, Dna, FlaskConical, Heart, ArrowRight, MessageCircle, Clock, ShieldCheck, CalendarDays, ChevronRight } from "lucide-react";
 import logo from "@/assets/labclin-logo.png";
 import mark from "@/assets/labclin-logo.png";
 import heroImg from "@/assets/lab-hero.jpg";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 
 
 export const Route = createFileRoute("/")({
@@ -19,6 +20,14 @@ export const Route = createFileRoute("/")({
 });
 
 const WHATSAPP_URL = "https://wa.me/5583982323029?text=Ol%C3%A1%21%20Gostaria%20de%20agendar%20um%20atendimento%20na%20LabClin.";
+
+const professionals = [
+  { initials: "CG", specialty: "Clínica geral", description: "Acolhimento, prevenção e acompanhamento da sua saúde.", tone: "from-[#dff4f2] to-[#b8e4df]" },
+  { initials: "ES", specialty: "Especialistas", description: "Atendimentos com profissionais de diferentes especialidades.", tone: "from-[#e7edff] to-[#cbd8f6]" },
+  { initials: "NU", specialty: "Nutrição", description: "Orientação personalizada para uma rotina mais saudável.", tone: "from-[#fff0d8] to-[#f4d3a1]" },
+  { initials: "PS", specialty: "Psicologia", description: "Um espaço de escuta, cuidado e bem-estar emocional.", tone: "from-[#f3e5f4] to-[#dfc5e4]" },
+  { initials: "FI", specialty: "Fisioterapia", description: "Apoio para recuperar movimentos e qualidade de vida.", tone: "from-[#e0f0e7] to-[#b9ddca]" },
+];
 
 function Index() {
   useEffect(() => {
@@ -134,6 +143,55 @@ function Index() {
               </div>
             ))}
           </div>
+        </section>
+
+        {/* Profissionais */}
+        <section id="profissionais" className="px-5 lg:px-10 py-14 lg:py-24 overflow-hidden">
+          <div className="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
+            <div className="lg:max-w-2xl">
+              <p className="text-xs font-semibold text-brand-teal uppercase tracking-wider">Nossa equipe</p>
+              <h2 className="mt-2 text-3xl lg:text-5xl font-bold text-brand-navy">Profissionais para cuidar de você.</h2>
+              <p className="mt-3 text-sm lg:text-base text-muted-foreground leading-relaxed">Conheça as áreas de atendimento da LabClin e encontre o cuidado que você precisa.</p>
+            </div>
+            <a href={WHATSAPP_URL} target="_blank" rel="noopener" className="hidden lg:inline-flex items-center gap-2 text-sm font-semibold text-brand-navy hover:text-brand-teal transition-colors">
+              Consultar agenda <ChevronRight className="h-4 w-4" />
+            </a>
+          </div>
+
+          <Carousel opts={{ align: "start", loop: true }} className="mt-8 lg:mt-12 px-1 lg:px-7 reveal">
+            <CarouselContent className="-ml-4">
+              {professionals.map((professional) => (
+                <CarouselItem key={professional.specialty} className="pl-4 basis-[84%] sm:basis-[56%] lg:basis-1/3">
+                  <article className="group h-full overflow-hidden rounded-3xl border border-border/60 bg-card shadow-soft transition-all duration-300 hover:-translate-y-1.5 hover:shadow-soft-lg">
+                    <div className={`relative h-48 lg:h-56 bg-gradient-to-br ${professional.tone} overflow-hidden`}>
+                      <div className="absolute -right-8 -top-8 h-36 w-36 rounded-full bg-white/30" />
+                      <div className="absolute bottom-0 left-0 h-24 w-full bg-gradient-to-t from-brand-navy/10 to-transparent" />
+                      <div className="absolute bottom-5 left-6 flex h-20 w-20 items-center justify-center rounded-2xl bg-white/80 font-display text-2xl font-bold text-brand-navy shadow-soft backdrop-blur">
+                        {professional.initials}
+                      </div>
+                      <span className="absolute right-5 top-5 inline-flex items-center gap-1.5 rounded-full bg-white/75 px-3 py-1.5 text-[11px] font-semibold text-brand-navy backdrop-blur">
+                        <ShieldCheck className="h-3.5 w-3.5 text-brand-teal" /> LabClin
+                      </span>
+                    </div>
+                    <div className="p-5 lg:p-6">
+                      <p className="text-xs font-semibold uppercase tracking-wider text-brand-teal">Área de atendimento</p>
+                      <h3 className="mt-1.5 text-xl font-bold text-brand-navy">{professional.specialty}</h3>
+                      <p className="mt-2 min-h-12 text-sm leading-relaxed text-muted-foreground">{professional.description}</p>
+                      <a href={WHATSAPP_URL} target="_blank" rel="noopener" className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-brand-navy group-hover:text-brand-teal transition-colors">
+                        <CalendarDays className="h-4 w-4" /> Ver disponibilidade
+                      </a>
+                    </div>
+                  </article>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <CarouselPrevious aria-label="Profissional anterior" className="left-3 top-28 border-0 bg-white/90 text-brand-navy shadow-soft hover:bg-white lg:-left-4 lg:top-1/2" />
+            <CarouselNext aria-label="Próximo profissional" className="right-3 top-28 border-0 bg-white/90 text-brand-navy shadow-soft hover:bg-white lg:-right-4 lg:top-1/2" />
+          </Carousel>
+
+          <a href={WHATSAPP_URL} target="_blank" rel="noopener" className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-brand-navy hover:text-brand-teal lg:hidden transition-colors">
+            Consultar agenda <ChevronRight className="h-4 w-4" />
+          </a>
         </section>
 
         {/* História + CTA + Localização — bloco único navy */}
