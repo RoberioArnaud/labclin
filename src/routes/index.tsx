@@ -4,6 +4,11 @@ import { MapPin, Phone, Microscope, Stethoscope, Dna, FlaskConical, Heart, Arrow
 import logo from "@/assets/labclin-logo.png";
 import mark from "@/assets/labclin-logo.png";
 import heroImg from "@/assets/lab-hero.jpg";
+import lucasImg from "@/assets/dr-lucas-alcantara.png";
+import rafaelaImg from "@/assets/dra-rafaela-marques.png";
+import cleudaliceImg from "@/assets/dra-cleudalice-ramalho.png";
+import eloysaImg from "@/assets/dra-eloysa.png";
+import joseWilsonImg from "@/assets/dr-jose-wilson.png";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 
 
@@ -21,12 +26,22 @@ export const Route = createFileRoute("/")({
 
 const WHATSAPP_URL = "https://wa.me/5583982323029?text=Ol%C3%A1%21%20Gostaria%20de%20agendar%20um%20atendimento%20na%20LabClin.";
 
-const professionals = [
-  { initials: "CG", specialty: "Clínica geral", description: "Acolhimento, prevenção e acompanhamento da sua saúde.", tone: "from-[#dff4f2] to-[#b8e4df]" },
-  { initials: "ES", specialty: "Especialistas", description: "Atendimentos com profissionais de diferentes especialidades.", tone: "from-[#e7edff] to-[#cbd8f6]" },
-  { initials: "NU", specialty: "Nutrição", description: "Orientação personalizada para uma rotina mais saudável.", tone: "from-[#fff0d8] to-[#f4d3a1]" },
-  { initials: "PS", specialty: "Psicologia", description: "Um espaço de escuta, cuidado e bem-estar emocional.", tone: "from-[#f3e5f4] to-[#dfc5e4]" },
-  { initials: "FI", specialty: "Fisioterapia", description: "Apoio para recuperar movimentos e qualidade de vida.", tone: "from-[#e0f0e7] to-[#b9ddca]" },
+type Professional = {
+  specialty: string;
+  initials?: string;
+  name?: string;
+  description?: string;
+  tone?: string;
+  image?: string;
+  imagePosition?: string;
+};
+
+const professionals: Professional[] = [
+  { name: "DR. LUCAS ALCÂNTARA", specialty: "Biomédico", image: lucasImg },
+  { name: "Dra. Rafaela Marques", specialty: "Medicina de Família e Comunidade", image: rafaelaImg, imagePosition: "left center" },
+  { name: "Dra. Cleudalice Ramalho", specialty: "Ultrassonografia", image: cleudaliceImg, imagePosition: "75% center" },
+  { name: "Dra. Eloysa", specialty: "Nutricionista", image: eloysaImg },
+  { name: "Dr. José Wilson", specialty: "Ginecologista", image: joseWilsonImg },
 ];
 
 function Index() {
@@ -163,20 +178,26 @@ function Index() {
               {professionals.map((professional) => (
                 <CarouselItem key={professional.specialty} className="pl-4 basis-[84%] sm:basis-[56%] lg:basis-1/3">
                   <article className="group h-full overflow-hidden rounded-3xl border border-border/60 bg-card shadow-soft transition-all duration-300 hover:-translate-y-1.5 hover:shadow-soft-lg">
-                    <div className={`relative h-48 lg:h-56 bg-gradient-to-br ${professional.tone} overflow-hidden`}>
-                      <div className="absolute -right-8 -top-8 h-36 w-36 rounded-full bg-white/30" />
-                      <div className="absolute bottom-0 left-0 h-24 w-full bg-gradient-to-t from-brand-navy/10 to-transparent" />
-                      <div className="absolute bottom-5 left-6 flex h-20 w-20 items-center justify-center rounded-2xl bg-white/80 font-display text-2xl font-bold text-brand-navy shadow-soft backdrop-blur">
-                        {professional.initials}
-                      </div>
-                      <span className="absolute right-5 top-5 inline-flex items-center gap-1.5 rounded-full bg-white/75 px-3 py-1.5 text-[11px] font-semibold text-brand-navy backdrop-blur">
-                        <ShieldCheck className="h-3.5 w-3.5 text-brand-teal" /> LabClin
-                      </span>
+                    <div className={`relative overflow-hidden ${professional.image ? "aspect-[9/16]" : `h-48 lg:h-56 bg-gradient-to-br ${professional.tone}`}`}>
+                      {professional.image ? (
+                        <img src={professional.image} alt={professional.name} className="h-full w-full object-cover" style={{ objectPosition: professional.imagePosition }} />
+                      ) : (
+                        <>
+                          <div className="absolute -right-8 -top-8 h-36 w-36 rounded-full bg-white/30" />
+                          <div className="absolute bottom-0 left-0 h-24 w-full bg-gradient-to-t from-brand-navy/10 to-transparent" />
+                          <div className="absolute bottom-5 left-6 flex h-20 w-20 items-center justify-center rounded-2xl bg-white/80 font-display text-2xl font-bold text-brand-navy shadow-soft backdrop-blur">
+                            {professional.initials}
+                          </div>
+                          <span className="absolute right-5 top-5 inline-flex items-center gap-1.5 rounded-full bg-white/75 px-3 py-1.5 text-[11px] font-semibold text-brand-navy backdrop-blur">
+                            <ShieldCheck className="h-3.5 w-3.5 text-brand-teal" /> LabClin
+                          </span>
+                        </>
+                      )}
                     </div>
                     <div className="p-5 lg:p-6">
-                      <p className="text-xs font-semibold uppercase tracking-wider text-brand-teal">Área de atendimento</p>
+                      <p className="text-xs font-semibold uppercase tracking-wider text-brand-teal">{professional.name ?? "Área de atendimento"}</p>
                       <h3 className="mt-1.5 text-xl font-bold text-brand-navy">{professional.specialty}</h3>
-                      <p className="mt-2 min-h-12 text-sm leading-relaxed text-muted-foreground">{professional.description}</p>
+                      {professional.description && <p className="mt-2 min-h-12 text-sm leading-relaxed text-muted-foreground">{professional.description}</p>}
                       <a href={WHATSAPP_URL} target="_blank" rel="noopener" className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-brand-navy group-hover:text-brand-teal transition-colors">
                         <CalendarDays className="h-4 w-4" /> Ver disponibilidade
                       </a>
