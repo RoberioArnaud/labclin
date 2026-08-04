@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { MapPin, Phone, Microscope, Stethoscope, Dna, FlaskConical, Heart, ArrowRight, MessageCircle, Clock, ShieldCheck, CalendarDays, ChevronRight } from "lucide-react";
 import logo from "@/assets/labclin-logo.png";
 import mark from "@/assets/labclin-logo.png";
@@ -9,7 +9,7 @@ import rafaelaImg from "@/assets/dra-rafaela-marques.png";
 import cleudaliceImg from "@/assets/dra-cleudalice-ramalho.png";
 import eloysaImg from "@/assets/dra-eloysa.png";
 import joseWilsonImg from "@/assets/dr-jose-wilson.png";
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
+import { type CarouselApi, Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 
 
 export const Route = createFileRoute("/")({
@@ -45,6 +45,10 @@ const professionals: Professional[] = [
 ];
 
 function Index() {
+  const [professionalsCarouselApi, setProfessionalsCarouselApi] = useState<CarouselApi>();
+  const [isProfessionalsCarouselPaused, setProfessionalsCarouselPaused] = useState(false);
+  const [selectedProfessional, setSelectedProfessional] = useState<string>();
+
   useEffect(() => {
     const els = document.querySelectorAll(".reveal");
     const io = new IntersectionObserver((entries) => {
@@ -58,6 +62,15 @@ function Index() {
     els.forEach((el) => io.observe(el));
     return () => io.disconnect();
   }, []);
+
+  useEffect(() => {
+    if (!professionalsCarouselApi || isProfessionalsCarouselPaused) {
+      return;
+    }
+
+    const interval = window.setInterval(() => professionalsCarouselApi.scrollNext(), 4500);
+    return () => window.clearInterval(interval);
+  }, [isProfessionalsCarouselPaused, professionalsCarouselApi]);
 
   return (
     <div className="min-h-screen bg-background overflow-x-hidden">
@@ -173,11 +186,26 @@ function Index() {
             </a>
           </div>
 
-          <Carousel opts={{ align: "start", loop: true }} className="mt-8 lg:mt-12 px-1 lg:px-7 reveal">
+          <Carousel opts={{ align: "start", loop: true, duration: 30 }} setApi={setProfessionalsCarouselApi} className="mt-8 lg:mt-12 px-1 lg:px-7 reveal">
             <CarouselContent className="-ml-4">
               {professionals.map((professional) => (
                 <CarouselItem key={professional.specialty} className="pl-4 basis-[84%] sm:basis-[56%] lg:basis-1/3">
-                  <article className="group h-full overflow-hidden rounded-3xl border border-border/60 bg-card shadow-soft transition-all duration-300 hover:-translate-y-1.5 hover:shadow-soft-lg">
+                  <article
+                    role="button"
+                    tabIndex={0}
+                    onClick={() => {
+                      setProfessionalsCarouselPaused(true);
+                      setSelectedProfessional(professional.specialty);
+                    }}
+                    onKeyDown={(event) => {
+                      if (event.key === "Enter" || event.key === " ") {
+                        event.preventDefault();
+                        setProfessionalsCarouselPaused(true);
+                        setSelectedProfessional(professional.specialty);
+                      }
+                    }}
+                    className={`group h-full cursor-pointer overflow-hidden rounded-3xl border bg-card transition-all duration-300 ${selectedProfessional === professional.specialty ? "-translate-y-3 scale-[1.02] border-brand-teal" : "border-border/60 hover:-translate-y-1.5"}`}
+                  >
                     <div className={`relative overflow-hidden ${professional.image ? "aspect-[9/16]" : `h-48 lg:h-56 bg-gradient-to-br ${professional.tone}`}`}>
                       {professional.image ? (
                         <img src={professional.image} alt={professional.name} className="h-full w-full object-cover" style={{ objectPosition: professional.imagePosition }} />
