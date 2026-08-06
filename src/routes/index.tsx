@@ -320,16 +320,16 @@ function Index() {
             </div>
 
             {/* CTA + Contato - desktop two columns */}
-            <div id="contato" className="lg:grid lg:grid-cols-2 lg:gap-16 lg:items-start">
+            <div id="contato" className="lg:grid lg:grid-cols-2 lg:gap-16 lg:items-center">
               <div>
-                <p className="text-xs font-semibold text-brand-teal uppercase tracking-wider">Vamos cuidar de você</p>
-                <h2 className="mt-2 text-3xl lg:text-5xl font-bold">Agende seu atendimento agora mesmo.</h2>
-                <p className="mt-3 lg:mt-5 text-white/80 lg:text-lg">
+                <p className="text-xs font-semibold text-brand-teal uppercase tracking-wider lg:text-sm">Vamos cuidar de você</p>
+                <h2 className="mt-2 text-3xl font-bold lg:text-6xl">Agende seu atendimento agora mesmo.</h2>
+                <p className="mt-3 text-white/80 lg:mt-5 lg:text-xl">
                   Resposta rápida pelo WhatsApp. Estamos prontos para te receber.
                 </p>
 
                 <a href={WHATSAPP_URL} target="_blank" rel="noopener"
-                   className="mt-6 lg:mt-8 flex lg:inline-flex items-center justify-center gap-2.5 bg-whatsapp text-white font-semibold py-4 lg:px-10 rounded-2xl shadow-soft-lg hover:shadow-[var(--shadow-glow)] hover:-translate-y-0.5 active:scale-[0.98] transition-all duration-300">
+                   className="mt-6 flex items-center justify-center gap-2.5 rounded-2xl bg-whatsapp py-4 font-semibold text-white shadow-soft-lg transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[var(--shadow-glow)] active:scale-[0.98] lg:mt-8 lg:inline-flex lg:px-10 lg:text-lg">
                   <MessageCircle className="h-5 w-5" />
                   Fale conosco no WhatsApp
                 </a>
@@ -382,9 +382,9 @@ function Index() {
           </div>
         </section>
 
-        <footer className="bg-brand-navy text-white/60 px-5 lg:px-10 py-8 lg:py-12 text-center text-xs lg:text-sm border-t border-white/10 lg:w-screen lg:left-1/2 lg:-translate-x-1/2 relative">
-          <img src={logo} alt="LabClin" className="h-10 lg:h-12 mx-auto" />
-          <p className="mt-4">© {new Date().getFullYear()} LabClin — Laboratório e Clínica Integrada.</p>
+        <footer className="relative border-t border-white/10 bg-brand-navy px-5 py-4 text-center text-xs text-white/60 lg:left-1/2 lg:w-screen lg:-translate-x-1/2 lg:px-10 lg:py-5 lg:text-sm">
+          <img src={logo} alt="LabClin" className="mx-auto h-6 lg:h-8" />
+          <p className="mt-2">© {new Date().getFullYear()} LabClin — Laboratório e Clínica Integrada.</p>
           <p className="mt-1">Todos os direitos reservados.</p>
         </footer>
       </main>
