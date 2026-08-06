@@ -129,7 +129,7 @@ function Index() {
               <div className="mt-6 lg:mt-10 grid grid-cols-3 gap-2 lg:gap-4 reveal lg:max-w-lg">
                 {[
                   { n: "2022", l: "Fundada em" },
-                  { n: "2", l: "Unidades de atendimento" },
+                  { n: "3", l: "Unidades de atendimento" },
                   { n: "100%", l: "Cuidado humano" },
                 ].map((s, i) => (
                   <div key={s.l} style={{ transitionDelay: `${i * 80}ms` }} className="text-center bg-accent rounded-2xl py-3 lg:py-5 px-2 shadow-soft hover:-translate-y-0.5 transition-transform">
@@ -274,18 +274,18 @@ function Index() {
         </section>
 
         {/* História + CTA + Localização — bloco único navy */}
-        <section id="historia" className="px-5 lg:px-16 py-16 lg:py-24 bg-brand-navy text-white relative overflow-hidden rounded-t-[3rem] lg:rounded-none lg:mt-0 lg:w-screen lg:left-1/2 lg:-translate-x-1/2 shadow-[0_-20px_50px_-20px_rgba(0,0,0,0.25)]">
+        <section id="historia" className="relative overflow-hidden rounded-t-[3rem] bg-brand-navy px-6 py-20 text-white shadow-[0_-20px_50px_-20px_rgba(0,0,0,0.25)] lg:left-1/2 lg:mt-0 lg:w-screen lg:-translate-x-1/2 lg:rounded-none lg:px-16 lg:py-32">
           <div className="absolute -top-32 -left-24 w-80 h-80 rounded-full bg-brand-teal/15 blur-3xl" />
           <div className="absolute top-1/2 -right-24 w-72 h-72 rounded-full bg-brand-teal/15 blur-3xl" />
           <div className="absolute -bottom-24 left-1/3 w-72 h-72 rounded-full bg-brand-teal/10 blur-3xl" />
 
           <div className="relative">
             {/* História - desktop two columns */}
-            <div className="lg:grid lg:grid-cols-2 lg:gap-16 lg:items-center">
+            <div className="lg:grid lg:grid-cols-2 lg:items-center lg:gap-24">
               <div>
                 <p className="text-xs font-semibold text-brand-teal uppercase tracking-wider">Nossa história</p>
-                <h2 className="mt-2 text-3xl lg:text-5xl font-bold">Cuidando do interior da Paraíba desde 2022.</h2>
-                <div className="mt-6 space-y-4 text-white/80 leading-relaxed text-[15px] lg:text-base">
+                <h2 className="mt-3 text-3xl font-bold lg:text-5xl">Cuidando do interior da Paraíba desde 2022.</h2>
+                <div className="mt-7 space-y-5 text-[15px] leading-relaxed text-white/80 lg:mt-8 lg:space-y-6 lg:text-base">
                   <p>
                     Fundada em <strong className="text-white">2022</strong>, a <strong className="text-white">LabClin</strong> nasceu com uma missão simples: levar diagnósticos confiáveis e atendimento humano às cidades de <strong className="text-white">Cacimba de Dentro</strong> e <strong className="text-white">Araruna</strong>.
                   </p>
@@ -294,8 +294,8 @@ function Index() {
                   </p>
                 </div>
               </div>
-              <div className="mt-5 lg:mt-0 lg:order-first flex items-center justify-center">
-                <img src={mark} alt="LabClin" width={400} height={300} loading="lazy" className="w-48 lg:w-80 rounded-2xl" />
+              <div className="mt-10 flex items-center justify-center lg:order-first lg:mt-0">
+                <img src={mark} alt="LabClin" width={400} height={300} loading="lazy" className="w-52 rounded-2xl lg:w-96" />
               </div>
             </div>
 
