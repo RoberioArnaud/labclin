@@ -86,6 +86,7 @@ function Index() {
           <img src={logo} alt="LabClin" className="h-10 lg:h-12 w-auto" />
           <nav className="hidden lg:flex items-center gap-8 text-sm font-medium text-white/80">
             <a href="#servicos" className="hover:text-brand-teal transition-colors">Serviços</a>
+            <a href="#profissionais" className="hover:text-brand-teal transition-colors">Profissionais</a>
             <a href="#historia" className="hover:text-brand-teal transition-colors">Nossa história</a>
             <a href="#contato" className="hover:text-brand-teal transition-colors">Contato</a>
           </nav>
