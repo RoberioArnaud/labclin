@@ -68,7 +68,7 @@ function Index() {
       return;
     }
 
-    const interval = window.setInterval(() => professionalsCarouselApi.scrollNext(), 4500);
+    const interval = window.setInterval(() => professionalsCarouselApi.scrollNext(), 3500);
     return () => window.clearInterval(interval);
   }, [isProfessionalsCarouselPaused, professionalsCarouselApi]);
 
@@ -186,8 +186,8 @@ function Index() {
             </a>
           </div>
 
-          <Carousel opts={{ align: "start", loop: true, duration: 30 }} setApi={setProfessionalsCarouselApi} className="mt-8 lg:mt-12 px-1 lg:px-7 reveal">
-            <CarouselContent className="-ml-4">
+          <Carousel opts={{ align: "start", loop: true, duration: 25 }} setApi={setProfessionalsCarouselApi} className="mt-8 lg:mt-12 px-1 lg:px-7 reveal">
+            <CarouselContent className="-ml-4 pt-3 pb-8">
               {professionals.map((professional) => (
                 <CarouselItem key={professional.specialty} className="pl-4 basis-[84%] sm:basis-[56%] lg:basis-1/3">
                   <article
@@ -204,7 +204,7 @@ function Index() {
                         setSelectedProfessional(professional.specialty);
                       }
                     }}
-                    className={`group h-full cursor-pointer overflow-hidden rounded-3xl border bg-card transition-all duration-300 ${selectedProfessional === professional.specialty ? "-translate-y-3 scale-[1.02] border-brand-teal" : "border-border/60 hover:-translate-y-1.5"}`}
+                    className={`group h-full cursor-pointer overflow-hidden rounded-3xl bg-white shadow-[0_18px_40px_-18px_rgba(18,35,67,0.42)] transition-all duration-300 ${selectedProfessional === professional.specialty ? "-translate-y-3 scale-[1.02] shadow-[0_24px_48px_-18px_rgba(18,35,67,0.5)]" : "hover:-translate-y-1.5 hover:shadow-[0_24px_48px_-18px_rgba(18,35,67,0.5)]"}`}
                   >
                     <div className={`relative overflow-hidden ${professional.image ? "aspect-[9/16]" : `h-48 lg:h-56 bg-gradient-to-br ${professional.tone}`}`}>
                       {professional.image ? (
