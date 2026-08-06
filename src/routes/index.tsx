@@ -187,7 +187,7 @@ function Index() {
           </div>
 
           <Carousel opts={{ align: "start", loop: true, duration: 25 }} setApi={setProfessionalsCarouselApi} className="mt-8 lg:mt-12 px-1 lg:px-7 reveal">
-            <CarouselContent className="-ml-4 pt-3 pb-8">
+            <CarouselContent className="-ml-4 pt-3 pb-8" viewportClassName="-mx-6 px-6">
               {professionals.map((professional) => (
                 <CarouselItem key={professional.specialty} className="pl-4 basis-[84%] sm:basis-[56%] lg:basis-1/3">
                   <article
