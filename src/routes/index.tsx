@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
-import { MapPin, Phone, Microscope, Stethoscope, Dna, FlaskConical, Heart, ArrowRight, MessageCircle, Clock, ShieldCheck, CalendarDays, ChevronRight } from "lucide-react";
+import { MapPin, Phone, Microscope, Stethoscope, Dna, FlaskConical, Heart, ArrowRight, MessageCircle, Clock, ShieldCheck, CalendarDays, ChevronRight, CheckCircle2 } from "lucide-react";
 import logo from "@/assets/labclin-logo.png";
 import mark from "@/assets/labclin-logo.png";
 import heroImg from "@/assets/lab-hero.jpg";
@@ -42,6 +42,12 @@ const professionals: Professional[] = [
   { name: "Dra. Cleudalice Ramalho", specialty: "Ultrassonografia", image: cleudaliceImg, imagePosition: "75% center" },
   { name: "Dra. Eloysa", specialty: "Nutricionista", image: eloysaImg },
   { name: "Dr. José Wilson", specialty: "Ginecologista", image: joseWilsonImg },
+];
+
+const sameDayExams = [
+  "Hemograma", "Tipagem sanguínea", "Sumário de urina", "Parasitológico de fezes",
+  "Pesquisa de sangue oculto", "VDRL", "ASLO", "Fator reumatoide", "PCR", "BHCG",
+  "VHS", "HIV", "Sífilis", "HCV", "HBsAg", "H. pylori",
 ];
 
 function Index() {
@@ -160,7 +166,7 @@ function Index() {
               { icon: Dna, t: "DNA & Sexagem", d: "Testes genéticos com privacidade e precisão." },
               { icon: Microscope, t: "Biópsias & Citológico", d: "Análises detalhadas para diagnósticos seguros." },
             ].map((s, i) => (
-              <div key={s.t} style={{ transitionDelay: `${i * 100}ms` }} className="reveal card-hover flex lg:flex-col gap-4 lg:gap-5 bg-card border border-border/50 p-4 lg:p-7 rounded-2xl shadow-soft">
+              <div key={s.t} style={{ transitionDelay: `${i * 100}ms` }} className="reveal card-hover relative flex lg:flex-col gap-4 lg:gap-5 overflow-hidden bg-card border border-border/50 p-4 lg:p-7 rounded-2xl shadow-soft">
                 <div className="shrink-0 h-12 w-12 lg:h-14 lg:w-14 rounded-xl bg-brand-teal-soft flex items-center justify-center">
                   <s.icon className="h-6 w-6 lg:h-7 lg:w-7 text-brand-teal" />
                 </div>
@@ -168,8 +174,31 @@ function Index() {
                   <h3 className="font-semibold lg:text-lg text-brand-navy">{s.t}</h3>
                   <p className="text-sm text-muted-foreground mt-0.5 lg:mt-2">{s.d}</p>
                 </div>
+                <div aria-hidden="true" className="absolute inset-x-0 bottom-0 h-1.5 bg-brand-teal" />
               </div>
             ))}
+          </div>
+        </section>
+
+        {/* Resultados no mesmo dia */}
+        <section id="resultados" className="px-5 lg:px-10 py-12 lg:py-24">
+          <div className="relative">
+            <div className="relative">
+              <p className="text-center text-xs font-semibold uppercase tracking-wider text-brand-teal">Resultados ágeis</p>
+              <h2 className="mx-auto mt-4 max-w-3xl text-center text-3xl font-bold leading-tight text-brand-navy lg:text-5xl">Exames com resultado no mesmo dia</h2>
+              <p className="mx-auto mt-3 max-w-2xl text-center text-sm leading-relaxed text-muted-foreground lg:text-base">Mais agilidade para você cuidar da sua saúde. Confira abaixo os exames disponíveis para resultado no mesmo dia.</p>
+
+              <div className="mt-7 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
+                {sameDayExams.map((exam) => (
+                  <div key={exam} className="relative flex items-center gap-2 overflow-hidden rounded-xl border border-white bg-white/90 py-2.5 pl-4 pr-3 text-xs text-brand-navy shadow-soft lg:text-sm">
+                    <div aria-hidden="true" className="absolute inset-y-0 left-0 w-2.5 bg-brand-teal" />
+                    <CheckCircle2 className="h-3.5 w-3.5 shrink-0 text-brand-teal" />
+                    {exam}
+                  </div>
+                ))}
+              </div>
+            </div>
+
           </div>
         </section>
 
@@ -189,7 +218,7 @@ function Index() {
           <Carousel opts={{ align: "start", loop: true, duration: 25 }} setApi={setProfessionalsCarouselApi} className="mt-8 lg:mt-12 px-1 lg:px-7 reveal">
             <CarouselContent className="-ml-4 pt-3 pb-8" viewportClassName="-mx-6 px-6">
               {professionals.map((professional) => (
-                <CarouselItem key={professional.specialty} className="pl-4 basis-[84%] sm:basis-[56%] lg:basis-1/3">
+                <CarouselItem key={professional.specialty} className="pl-4 basis-[65%] sm:basis-[56%] lg:basis-1/3">
                   <article
                     role="button"
                     tabIndex={0}
