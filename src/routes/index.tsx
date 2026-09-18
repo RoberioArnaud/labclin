@@ -6,7 +6,6 @@ import mark from "@/assets/labclin-logo.png";
 import heroImg from "@/assets/lab-hero.jpg";
 import lucasImg from "@/assets/dr-lucas-alcantara.png";
 import rafaelaImg from "@/assets/dra-rafaela-marques.png";
-import cleudaliceImg from "@/assets/dra-cleudalice-ramalho.png";
 import eloysaImg from "@/assets/dra-eloysa.png";
 import joseWilsonImg from "@/assets/dr-jose-wilson.png";
 import { type CarouselApi, Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
@@ -39,7 +38,6 @@ type Professional = {
 const professionals: Professional[] = [
   { name: "DR. LUCAS ALCÂNTARA", specialty: "Biomédico", image: lucasImg },
   { name: "Dra. Rafaela Marques", specialty: "Medicina de Família e Comunidade", image: rafaelaImg, imagePosition: "left center" },
-  { name: "Dra. Cleudalice Ramalho", specialty: "Ultrassonografia", image: cleudaliceImg, imagePosition: "75% center" },
   { name: "Dra. Eloysa", specialty: "Nutricionista", image: eloysaImg },
   { name: "Dr. José Wilson", specialty: "Ginecologista", image: joseWilsonImg },
 ];
